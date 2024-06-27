@@ -3,86 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax E-commerce Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CaliDef Collectables</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Original Series Cards - Your destination for vintage Garbage Pail Kids (GPK) cards, sets, errors, subsets, merch, and more.">
 </head>
 <body>
+    <div class="parallax parallax_1"></div>
+    <div class="stars"></div>
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact-us">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="parallax">
-        <div class="parallax__layer parallax__layer--back">
-            <div class="parallax__content">
-                <img src="path_to_your_image.jpg" alt="Hero Image" class="responsive-image">
+        <div class="container">
+            <h1>CaliDef Collectables</h1>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#Products">Products</a></li>
+                    <li><a href="#More">More GPK Merch</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-buttons">
+                <button class="cta-button">Shop Now</button>
+                <button id="darkModeToggle" class="toggle-switch" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
             </div>
         </div>
-        <div class="parallax__layer parallax__layer--base">
-            <section id="home" class="home">
-                <h1>Welcome to Our Store</h1>
-                <p>Discover unique and vintage collectibles.</p>
-                <a href="#products" class="btn">Shop Now</a>
-            </section>
-            <section id="about-us" class="about-us">
-                <div class="glass-box">
-                    <h2>About Us</h2>
-                    <p>Welcome to our e-commerce site. We specialize in unique collectibles and vintage items.</p>
-                </div>
-            </section>
-            <section id="products" class="products">
+    </header>
+    
+    <main>
+        <div class="parallax parallax_2"></div>
+
+        <section id="Home" class="home">
+            <div class="container">
+                <h2>Your Vintage GPK Destination</h2>
+                <p>Discover rare and vintage Garbage Pail Kids (GPK) cards, sets, errors, subsets, merch, and more.</p>
+                <a href="#Products" class="cta-button">Explore Products</a>
+                <img src="gpk background.png" alt="Hero Image" class="enhanced-image" loading="lazy">
+            </div>
+        </section>
+
+        <section id="About" class="about" data-scroll>
+            <div class="container">
+                <h2>About Us</h2>
+                <p>CaliDef Collectables is dedicated to bringing you the best in vintage Garbage Pail Kids cards.</p>
+            </div>
+        </section>
+
+        <div class="parallax parallax_3"></div>
+
+        <section id="Products" class="products" data-scroll>
+            <div class="container">
                 <h2>Our Products</h2>
-                <div class="product-grid">
-                    <div class="product-item">
-                        <img src="path_to_product_image1.jpg" alt="Product 1">
-                        <h3>GPK Cards</h3>
-                        <p>Explore our extensive collection of vintage GPK cards.</p>
-                        <a href="#product-details-1" class="btn">View More</a>
+                <div class="product-row">
+                    <div class="scroll-container">
+                        <img src="https://via.placeholder.com/300" alt="GPK 3">
+                        <p>Garbage Pail Kids Series 3</p>
                     </div>
-                    <div class="product-item">
-                        <img src="path_to_product_image2.jpg" alt="Product 2">
-                        <h3>GPK Sets</h3>
-                        <p>Complete sets of GPK cards from various Original Series.</p>
-                        <a href="#product-details-2" class="btn">View More</a>
-                    </div>
-                    <!-- Add more product items here -->
                 </div>
-            </section>
-            <section id="gallery" class="gallery">
-                <h2>Gallery</h2>
-                <div class="photo-grid">
-                    <div class="photo-item">
-                        <img src="path_to_gallery_image1.jpg" alt="Gallery Image 1">
+                <div class="product-row">
+                    <div class="scroll-container">
+                        <img src="https://via.placeholder.com/300" alt="GPK Set 1">
+                        <p>Garbage Pail Kids Series 4</p>
                     </div>
-                    <div class="photo-item">
-                        <img src="path_to_gallery_image2.jpg" alt="Gallery Image 2">
+                </div>
+                <div class="product-row">
+                    <div class="scroll-container">
+                        <img src="https://via.placeholder.com/300" alt="GPK Error 1">
+                        <p>Garbage Pail Kids Series 5</p>
                     </div>
-                    <!-- Add more photo items here -->
                 </div>
-            </section>
-            <section id="contact-us" class="contact-us">
-                <div class="glass-box">
-                    <h2>Contact Us</h2>
-                    <p>Get in touch with us for any queries or concerns.</p>
-                    <form>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message"></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                    </form>
+                <!-- Add more product rows as needed -->
+            </div>
+        </section>
+
+        <section id="More" class="more" data-scroll>
+            <div class="container">
+                <h2>Latest Articles</h2>
+                <div class="articles">
+                    <article data-scroll>
+                        <h3>Top 10 Rarest GPK Cards</h3>
+                        <p>Discover the rarest GPK cards and their unique stories.</p>
+                    </article>
+                    <article data-scroll>
+                        <h3>How to Spot Fake GPK Cards</h3>
+                        <p>Learn the tips and tricks to identify authentic GPK cards.</p>
+                    </article>
                 </div>
-            </section>
+            </div>
+        </section>
+
+        <section id="Contact" class="contact" data-scroll>
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CaliDef Collectables. All rights reserved.</p>
         </div>
-    </div>
-    <script src="scripts.js"></script>
+    </footer>
+
+    <button id="backToTop" title="Back to top" aria-label="Back to top">☝️</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
