@@ -107,6 +107,7 @@ header nav ul li a:hover {
   width: auto;
   height: 500px;
   opacity: 0.5;
+  z-index: 0
   animation: scrollBackground 15s linear infinite;
 }
 
@@ -115,7 +116,7 @@ header nav ul li a:hover {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-20%);
+    transform: translateX(-100%);
   }
 }
 
