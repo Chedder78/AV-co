@@ -4,7 +4,6 @@
   --secondary-color: #4e4376;
   --text-color: #ffffff;
   --accent-color: #ff9a9e;
-  --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-border: rgba(255, 255, 255, 0.3);
 }
 
@@ -48,7 +47,7 @@ header {
   top: 0px;
   width: 100%;
   height: 170px;
-  background: rgba(0, 0, 0, 0.9);
+ 
   color: var(--text-color);
   display: flex;
   justify-content: space-between;
@@ -104,7 +103,7 @@ header nav ul li a:hover {
     width: auto;
     height: 500px;
     opacity: 0.5;
-    z-index: 0
+    z-index: 1
     animation: scrollBackground 15s linear infinite;
 }
 
@@ -113,7 +112,7 @@ header nav ul li a:hover {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-20%);
   }
 }
 
@@ -288,7 +287,7 @@ header nav ul li a:hover {
 }
 
 .contact button:hover {
-  background:(var(--color-accent), 10%);
+  
   transform: scale(1.05); /* Slight hover scaling effect */
 }
 
@@ -296,7 +295,6 @@ header nav ul li a:hover {
      /* General Body */
 .custom-body {
     font-family: Arial, sans-serif;
-    background-color: #1a1a1a; /* Match background color to portfolio */
     margin: 0;
     padding: 0;
     color: #f5f5f5; /* Text color for better readability */
@@ -306,7 +304,7 @@ header nav ul li a:hover {
 .portfolio {
     padding: 4rem 2rem;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
+   
     backdrop-filter: blur(10px);
 }
 
@@ -350,7 +348,7 @@ header nav ul li a:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8);
+   
 }
 
 .modal-content {
@@ -359,7 +357,7 @@ header nav ul li a:hover {
     padding: 20px;
     width: 80%;
     max-width: 800px;
-    background: rgba(255, 255, 255, 0.1);
+   
     border-radius: 10px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
@@ -385,7 +383,7 @@ header nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+   
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -400,7 +398,7 @@ header nav ul li a:hover {
 
 .swiper-button {
     --position: 17%;
-    background-color: #F04E23;
+   
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
