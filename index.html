@@ -1,126 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaliDef Collectables</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Original Series Cards - Your destination for vintage Garbage Pail Kids (GPK) cards, sets, errors, subsets, merch, and more.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>It's Showtime Inc. - Audio/Video & Home Automation Experts</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="parallax parallax_1"></div>
-    <div class="stars"></div>
-    <div class="loading">
-        <div class="spinner"></div>
+ 
+  <!-- Header -->
+  <div>
+  <header id="header" header class="nav-visible">   
+    <div class="logo">
+      <h1>It's Showtime Inc.</h1>
     </div>
-    <header>
-        <div class="container">
-            <h1>CaliDef Collectables</h1>
-            <nav aria-label="Main Navigation">
-                <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Products">Products</a></li>
-                    <li><a href="#More">More GPK Merch</a></li>
-                    <li><a href="#Contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-buttons">
-                <button class="cta-button">Shop Now</button>
-                <button id="darkModeToggle" class="toggle-switch" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
+    <nav aria-label="Primary Navigation">
+      <ul class="nav-menu">
+        <li><a href="#about" aria-label="About Us Section">About Us</a></li>
+        <li><a href="#services" aria-label="Services Section">Services</a></li>
+        <li><a href="#portfolio" aria-label="Portfolio Section">Portfolio</a></li>
+        <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Parallax Background -->
+  <div class="parallax">
+    <img src="parallax1.jpg" alt="Background Image 1">
+    <img src="parallax2.jpg" alt="Background Image 2" style="top: 50%;">
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content glass-effect">
+      <h2>Your Home, Smarter and Louder</h2>
+      <p>Specializing in creating immersive experiences through cutting-edge technology and elegant design.</p>
+      <a href="#services" class="btn" aria-label="Explore Our Services">Explore Our Services</a>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about glass-effect" aria-labelledby="about-heading">
+    <h2 id="about-heading">About Us</h2>
+    <p>
+      At It's Showtime Inc., we are passionate about transforming your home into a space of innovation and elegance. From custom home theaters to seamless home automation, we bring the future to your fingertips.
+    </p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services" aria-labelledby="services-heading">
+    <h2 id="services-heading">Our Services</h2>
+    <div class="service-item glass-effect">
+      <h3>Home Theater Installation</h3>
+      <p>Experience cinema-quality entertainment in the comfort of your home with our customized theater solutions.</p>
+    </div>
+    <div class="service-item glass-effect">
+      <h3>Audio/Video Integration</h3>
+      <p>From surround sound systems to 4K displays, we deliver high-performance solutions tailored to your needs.</p>
+    </div>
+    <div class="service-item glass-effect">
+      <h3>Home Automation</h3>
+      <p>Control lighting, security, and entertainment effortlessly with our intuitive smart home systems.</p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio" aria-labelledby="portfolio-heading">
+    <h2 id="portfolio-heading">Our Portfolio</h2>
+    <p>Take a look at some of our recent projects showcasing our expertise and creativity.</p>
+    <div class="portfolio-gallery">
+      <figure>
+        <img src="portfolio1.jpg" alt="Custom Home Theater Project" class="glass-effect">
+        <figcaption>Custom Home Theater</figcaption>
+      </figure>
+      
+      <section>
+      <div class="container">
+      <div class="custom-body">
+        <div class="box" onclick="openModal()">
+            <h2>Open Carousel</h2>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <!-- Duplicate slides to ensure loop mode works -->
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div style="width: 100%; height: 100%; background-color: #f4f4f4;"></div>
+                    </div>
+                </div>
+                <div class="swiper-button swiper-button-next"></div>
+                <div class="swiper-button swiper-button-prev"></div>
             </div>
         </div>
-    </header>
-    
-    <main>
-        <div class="parallax parallax_2"></div>
+    </div>  
+     </section>
+     
+      <figure>
+        <img src="portfolio2.jpg" alt="Premium Audio System Installation" class="glass-effect">
+        <figcaption>Premium Audio System</figcaption>
+      </figure>
+      <figure>
+        <img src="portfolio3.jpg" alt="Seamless Home Automation Setup" class="glass-effect">
+        <figcaption>Seamless Home Automation</figcaption>
+      </figure>
+    </div>
+  </section>
 
-        <section id="Home" class="home">
-            <div class="container">
-                <h2>Your Vintage GPK Destination</h2>
-                <p>Discover rare and vintage Garbage Pail Kids (GPK) cards, sets, errors, subsets, merch, and more.</p>
-                <a href="#Products" class="cta-button">Explore Products</a>
-                <img src="gpk background.png" alt="Hero Image" class="enhanced-image" loading="lazy">
-            </div>
-        </section>
+  <!-- Contact Section -->
+  <section id="contact" class="contact glass-effect" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Us</h2>
+    <p>Ready to upgrade your home? Get in touch with us today for a consultation!</p>
+    <form action="contact.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      
+      <button type="submit" class="btn" aria-label="Send Message">Send Message</button>
+    </form>
+  </section>
 
-        <section id="About" class="about" data-scroll>
-            <div class="container">
-                <h2>About Us</h2>
-                <p>CaliDef Collectables is dedicated to bringing you the best in vintage Garbage Pail Kids cards.</p>
-            </div>
-        </section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 It's Showtime Inc. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" title="Facebook">Facebook</a>
+      <a href="#" title="Twitter">Twitter</a>
+      <a href="#" title="Instagram">Instagram</a>
+    </div>
+  </footer>
+  
+ 
+    <script>
+        var swiper = new Swiper('.swiper', {
+            slidesPerView: 3,
+            spaceBetween: -100,
+            centeredSlides: true,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            speed: 800,
+        });
 
-        <div class="parallax parallax_3"></div>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
 
-        <section id="Products" class="products" data-scroll>
-            <div class="container">
-                <h2>Our Products</h2>
-                <div class="product-row">
-                    <div class="scroll-container">
-                        <img src="https://via.placeholder.com/300" alt="GPK 3">
-                        <p>Garbage Pail Kids Series 3</p>
-                    </div>
-                </div>
-                <div class="product-row">
-                    <div class="scroll-container">
-                        <img src="https://via.placeholder.com/300" alt="GPK Set 1">
-                        <p>Garbage Pail Kids Series 4</p>
-                    </div>
-                </div>
-                <div class="product-row">
-                    <div class="scroll-container">
-                        <img src="https://via.placeholder.com/300" alt="GPK Error 1">
-                        <p>Garbage Pail Kids Series 5</p>
-                    </div>
-                </div>
-                <!-- Add more product rows as needed -->
-            </div>
-        </section>
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
-        <section id="More" class="more" data-scroll>
-            <div class="container">
-                <h2>Latest Articles</h2>
-                <div class="articles">
-                    <article data-scroll>
-                        <h3>Top 10 Rarest GPK Cards</h3>
-                        <p>Discover the rarest GPK cards and their unique stories.</p>
-                    </article>
-                    <article data-scroll>
-                        <h3>How to Spot Fake GPK Cards</h3>
-                        <p>Learn the tips and tricks to identify authentic GPK cards.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="Contact" class="contact" data-scroll>
-            <div class="container">
-                <h2>Contact Us</h2>
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                    
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 CaliDef Collectables. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <button id="backToTop" title="Back to top" aria-label="Back to top">☝️</button>
+        // Close the modal when the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();>
+            }
+        }
 
     <script src="script.js"></script>
 </body>
