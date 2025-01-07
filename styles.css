@@ -226,17 +226,37 @@ header nav ul li a:hover {
   background: linear-gradient(45deg, lighten(#ff7e5f, 10%), lighten(#feb47b, 10%));
 }
 
+/* Variables */
+:root {
+  --color-dark-background: #0d0d0d; /* Deep black for contrast */
+  --color-metal-highlight: #d3d3d3; /* Metallic silver for accents */
+  --color-wood-highlight: #9c472b; /* Rich wood tone for accents */
+  --color-glass-overlay: rgba(0, 0, 0, 0.6); /* Adjusted glass overlay for more depth */
+  --color-text: #f5f5f5; /* Slight off-white for readability */
+  --color-accent: linear-gradient(45deg, #ff7e5f, #feb47b); /* Accent gradient */
+}
+
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: var(--color-dark-background);
+  color: var(--color-text);
+}
+
 /* About Section */
 .about {
   padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: var(--color-glass-overlay);
   text-align: center;
   backdrop-filter: blur(10px);
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .about h2 {
   font-size: 2rem;
+  color: var(--color-metal-highlight); /* Metallic highlight for section titles */
 }
 
 .about p {
@@ -250,31 +270,33 @@ header nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8); /* Slightly darker overlay */
 }
 
 .service-item {
   padding: 2rem;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: var(--color-glass-overlay);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow for more depth */
 }
 
 .service-item h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: var(--color-wood-highlight); /* Highlight with wood tone */
 }
 
 .service-item p {
   font-size: 1rem;
+  color: var(--color-text); /* Ensures readability */
 }
 
 /* Portfolio Section */
 .portfolio {
   padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.7); /* Deeper background for image focus */
   text-align: center;
 }
 
@@ -288,20 +310,21 @@ header nav ul li a:hover {
 .portfolio-gallery img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Enhanced shadow for image depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-gallery img:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Stronger hover effect */
 }
 
 /* Contact Section */
 .contact {
   padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.8); /* Dark overlay for contrast */
   text-align: center;
-  color: var(--text-color);
+  color: var(--color-text);
   backdrop-filter: blur(10px);
 }
 
@@ -322,7 +345,7 @@ header nav ul li a:hover {
 
 .contact input, .contact textarea {
   background: rgba(255, 255, 255, 0.1);
-  color: var(--text-color);
+  color: var(--color-text);
 }
 
 .contact input::placeholder, .contact textarea::placeholder {
@@ -330,14 +353,15 @@ header nav ul li a:hover {
 }
 
 .contact button {
-  background: var(--accent-color);
-  color: var(--text-color);
+  background: var(--color-accent);
+  color: var(--color-dark-background); /* Ensure button text is visible */
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .contact button:hover {
-  background: lighten(var(--accent-color), 10%);
+  background: lighten(var(--color-accent), 10%);
+  transform: scale(1.05); /* Slight hover scaling effect */
 }
 
 
