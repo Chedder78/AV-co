@@ -4,7 +4,6 @@
   --secondary-color: #4e4376;
   --text-color: #ffffff;
   --accent-color: #ff9a9e;
-  --background-gradient: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
   --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-border: rgba(255, 255, 255, 0.3);
 }
@@ -18,7 +17,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: var(--background-gradient);
+  
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
@@ -108,7 +107,7 @@ header nav ul li a:hover {
   width: auto;
   height: 500px;
   opacity: 0.5;
-  animation: scrollBackground 30s linear infinite;
+  animation: scrollBackground 15s linear infinite;
 }
 
 @keyframes scrollBackground {
@@ -131,7 +130,7 @@ header nav ul li a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0 200px;
-  background: rgba(30, 30, 30, 0.4); /* Adjusted for better contrast */
+  background: opaque: white; /* Adjusted for better contrast */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
   border-radius: 15px;
   backdrop-filter: blur(10px); /* Frosted glass effect */
@@ -226,45 +225,7 @@ header nav ul li a:hover {
   background: linear-gradient(45deg, lighten(#ff7e5f, 10%), lighten(#feb47b, 10%));
 }
 
-/* Variables */
-:root {
-  --color-dark-background: #0d0d0d; /* Deep black for contrast */
-  --color-metal-highlight: #d3d3d3; /* Metallic silver for accents */
-  --color-wood-highlight: #9c472b; /* Rich wood tone for accents */
-  --color-glass-overlay: rgba(0, 0, 0, 0.6); /* Adjusted glass overlay for more depth */
-  --color-text: #f5f5f5; /* Slight off-white for readability */
-  --color-accent: linear-gradient(45deg, #ff7e5f, #feb47b); /* Accent gradient */
-}
 
-/* General Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: var(--color-dark-background);
-  color: var(--color-text);
-}
-
-/* About Section */
-.about {
-  padding: 4rem 2rem;
-  background: var(--color-glass-overlay);
-  text-align: center;
-  backdrop-filter: blur(10px);
-  color: var(--color-text);
-}
-
-.about h2 {
-  font-size: 2rem;
-  color: var(--color-metal-highlight); /* Metallic highlight for section titles */
-}
-
-.about p {
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-/* Services Section */
 .services {
   padding: 4rem 2rem;
   display: grid;
@@ -291,32 +252,6 @@ body, html {
 .service-item p {
   font-size: 1rem;
   color: var(--color-text); /* Ensures readability */
-}
-
-/* Portfolio Section */
-.portfolio {
-  padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.7); /* Deeper background for image focus */
-  text-align: center;
-}
-
-.portfolio-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.portfolio-gallery img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Enhanced shadow for image depth */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.portfolio-gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Stronger hover effect */
 }
 
 /* Contact Section */
