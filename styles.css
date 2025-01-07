@@ -128,7 +128,6 @@ header nav ul li a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0 200px;
-  background: opaque: white; /* Adjusted for better contrast */
   border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
   border-radius: 15px;
   backdrop-filter: blur(10px); /* Frosted glass effect */
@@ -156,7 +155,6 @@ header nav ul li a:hover {
 }
 
 .glass-header nav .nav-menu li a:hover {
-  background: rgba(255, 255, 255, 0.2); /* Highlight background */
   color: #ff7e5f; /* Soft accent color for hover */
 }
 
@@ -181,7 +179,6 @@ header nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)); /* Dark gradient overlay */
   z-index: 1;
 }
 
@@ -189,7 +186,6 @@ header nav ul li a:hover {
   position: relative;
   z-index: 2;
   max-width: 600px;
-  background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
   border-radius: 15px;
@@ -229,12 +225,11 @@ header nav ul li a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  background: rgba(0, 0, 0, 0.8); /* Slightly darker overlay */
 }
 
 .service-item {
   padding: 2rem;
-  background: var(--color-glass-overlay);
+
   border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
   border-radius: 10px;
   text-align: center;
@@ -255,7 +250,7 @@ header nav ul li a:hover {
 /* Contact Section */
 .contact {
   padding: 4rem 2rem;
-  background: rgba(0, 0, 0, 0.8); /* Dark overlay for contrast */
+
   text-align: center;
   color: var(--color-text);
   backdrop-filter: blur(10px);
@@ -277,7 +272,7 @@ header nav ul li a:hover {
 }
 
 .contact input, .contact textarea {
-  background: rgba(255, 255, 255, 0.1);
+ 
   color: var(--color-text);
 }
 
@@ -293,7 +288,7 @@ header nav ul li a:hover {
 }
 
 .contact button:hover {
-  background: lighten(var(--color-accent), 10%);
+  background:(var(--color-accent), 10%);
   transform: scale(1.05); /* Slight hover scaling effect */
 }
 
@@ -451,5 +446,5 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-  color: lighten(var(--text-color), 10%);
+  color: (var(--text-color), 10%);
 }
