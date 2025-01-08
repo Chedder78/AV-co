@@ -1,211 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>It's Showtime Inc. - Audio/Video & Home Automation Experts</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Showtime Inc.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
- 
-  <!-- Header -->
-  <div>
-  <header id="header" header class="nav-visible">   
-    <div class="logo">
-      <h1>It's Showtime Inc.</h1>
-    </div>
-    <nav aria-label="Primary Navigation">
-      <ul class="nav-menu">
-        <li><a href="#about" aria-label="About Us Section">About Us</a></li>
-        <li><a href="#services" aria-label="Services Section">Services</a></li>
-        <li><a href="#portfolio" aria-label="Portfolio Section">Portfolio</a></li>
-        <li><a href="#contact" aria-label="Contact Section">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="logo">
+            <h1>It's Showtime Inc.</h1>
+            <p>Experience Home Like Never Before</p>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="parallax">
-        <div class="spkr_close_up.jpg"></div>
-        <div class="layer layer-2"></div>
-        <div class="speakerAImade.jpg"></div>
-        <div class="layer foreground"></div>
-        <div class="content glassmorphism">
-            <h2>Your Ultimate AV Solution</h2>
-            <p>Experience the best audio and video installations tailored to your needs.</p>
-            <a href="#contact" class="button-gradient">Get Started</a>
+	    <!-- Parallax Background -->
+    <div class="parallax speakerAImade"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Redefine Your Home</h2>
+            <p>Transform your living space with cutting-edge audio, video, and automation solutions.</p>
+            <a href="#services" class="btn">Explore Services</a>
         </div>
     </section>
 
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content glass-effect">
-      <h2>Your Home, Smarter and Louder</h2>
-      <p>Specializing in creating immersive experiences through cutting-edge technology and elegant design.</p>
-      <a href="#services" class="btn" aria-label="Explore Our Services">Explore Our Services</a>
-    </div>
-  </section>
-
-  <!-- About Us Section -->
-  <section id="about" class="about glass-effect" aria-labelledby="about-heading">
-    <h2 id="about-heading">About Us</h2>
-    <p>
-      At It's Showtime Inc., we are passionate about transforming your home into a space of innovation and elegance. From custom home theaters to seamless home automation, we bring the future to your fingertips.
-    </p>
-  </section>
-
-  <!-- Services Section -->
-  <section id="services" class="services" aria-labelledby="services-heading">
-    <h2 id="services-heading">Our Services</h2>
-    <div class="service-item glass-effect">
-      <h3>Home Theater Installation</h3>
-      <p>Experience cinema-quality entertainment in the comfort of your home with our customized theater solutions.</p>
-    </div>
-    <div class="service-item glass-effect">
-      <h3>Audio/Video Integration</h3>
-      <p>From surround sound systems to 4K displays, we deliver high-performance solutions tailored to your needs.</p>
-    </div>
-    <div class="service-item glass-effect">
-      <h3>Home Automation</h3>
-      <p>Control lighting, security, and entertainment effortlessly with our intuitive smart home systems.</p>
-    </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio" aria-labelledby="portfolio-heading">
-    <h2 id="portfolio-heading">Our Portfolio</h2>
-    <p>Take a look at some of our recent projects showcasing our expertise and creativity.</p>
-    <div class="portfolio-gallery">
-      <figure>
-        <img src="portfolio1.jpg" alt="Custom Home Theater Project" class="glass-effect">
-        <figcaption>Custom Home Theater</figcaption>
-      </figure>
-      
-   <body class="custom-body">
-
-    <!-- Modal Section -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <div class="swiper">
-                <div class="swiper-wrapper">
-                    <!-- Swiper slides -->
-                    <div class="swiper-slide">
-                        <img src="portfolio1.jpg" alt="Slide 1">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="portfolio2.jpg" alt="Slide 2">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="portfolio3.jpg" alt="Slide 3">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="portfolio4.jpg" alt="Slide 4">
-                    </div>
-                </div>
-                <!-- Navigation buttons -->
-                <div class="swiper-button swiper-button-next"></div>
-                <div class="swiper-button swiper-button-prev"></div>
-            </div>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="service-item">
+            <h3>Home Theater</h3>
+            <p>Immerse yourself in a cinematic experience like never before.</p>
         </div>
-    </div>
+        <div class="service-item">
+            <h3>Smart Automation</h3>
+            <p>Control your home with a touch, voice, or scheduled automation.</p>
+        </div>
+        <div class="service-item">
+            <h3>Premium Audio</h3>
+            <p>Crystal-clear sound quality tailored for your space.</p>
+        </div>
+    </section>
+
+	  <!-- Parallax Background -->
+    <div class="parallax spkr_close_up"></div>
+
 
     <!-- Portfolio Section -->
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio-section">
         <h2>Our Portfolio</h2>
-        <div class="portfolio-gallery">
-            <figure>
-                <img src="portfolio2.jpg" alt="Premium Audio System Installation" class="glass-effect">
-                <figcaption>Premium Audio System</figcaption>
-            </figure>
-            <figure>
-                <img src="portfolio3.jpg" alt="Seamless Home Automation Setup" class="glass-effect">
-                <figcaption>Seamless Home Automation</figcaption>
-            </figure>
-            <figure>
-                <div class="box" onclick="openModal()">View More</div>
-            </figure>
+        <div class="portfolio-grid">
+            <div class="portfolio-item card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="custom-home-theater.jpg" alt="Custom Home Theater">
+                        <h3>Custom Home Theater</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Experience the ultimate cinematic experience with our custom-designed home theater systems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="premium-audio-system.jpg" alt="Premium Audio System">
+                        <h3>Premium Audio System</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Immerse yourself in crystal-clear sound with our state-of-the-art premium audio solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="seamless-home-automation.jpg" alt="Seamless Home Automation">
+                        <h3>Seamless Home Automation</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Control your home effortlessly with our seamless and intuitive automation systems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-item card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="another-project.jpg" alt="Another Project">
+                        <h3>Another Project</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Discover our other innovative projects, designed to enhance your living experience.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-     
-      <figure>
-        <img src="portfolio2.jpg" alt="Premium Audio System Installation" class="glass-effect">
-        <figcaption>Premium Audio System</figcaption>
-      </figure>
-      <figure>
-        <img src="portfolio3.jpg" alt="Seamless Home Automation Setup" class="glass-effect">
-        <figcaption>Seamless Home Automation</figcaption>
-      </figure>
-    </div>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <form action="submit-form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact glass-effect" aria-labelledby="contact-heading">
-    <h2 id="contact-heading">Contact Us</h2>
-    <p>Ready to upgrade your home? Get in touch with us today for a consultation!</p>
-    <form action="contact.php" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-      
-      <button type="submit" class="btn" aria-label="Send Message">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 It's Showtime Inc. All rights reserved.</p>
-    <div class="social-links">
-      <a href="#" title="Facebook">Facebook</a>
-      <a href="#" title="Twitter">Twitter</a>
-      <a href="#" title="Instagram">Instagram</a>
-    </div>
-  </footer>
-  
- 
-    <script>
-        var swiper = new Swiper('.swiper', {
-            slidesPerView: 3,
-            spaceBetween: -100,
-            centeredSlides: true,
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            effect: 'coverflow',
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 200,
-                modifier: 1,
-                slideShadows: true,
-            },
-            speed: 800,
-        });
-
-        function openModal() {
-            document.getElementById("myModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        // Close the modal when the user clicks anywhere outside of it
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("myModal")) {
-                closeModal();>
-            }
-        }
-          <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="scripts.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 It's Showtime Inc. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://twitter.com">Twitter</a>
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+    </footer>
+  <script src="script.js"></script>
 </body>
 </html>
