@@ -313,3 +313,19 @@ footer .social-links a {
 footer .social-links a:hover {
   color: var(--accent-color);
 }
+
+/* Parallax Background */
+.parallax {
+    height: 400px; /* Height of the parallax section */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.parallax.spkr_close_up {
+    background-image: url('spkr_close_up.jpg'); /* Replace with your image path */
+}
+
+.parallax.speakerAImade {
+    background-image: url('speakerAImade.jpg'); /* Replace with your image path */
+}
