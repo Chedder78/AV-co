@@ -335,6 +335,11 @@ body {
   background: lighten(var(--accent-color), 10%);
 }
 
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+
 /* Footer */
 footer {
   padding: 2rem;
