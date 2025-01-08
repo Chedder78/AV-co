@@ -120,4 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
   lazyImages.forEach((img) => lazyObserver.observe(img));
 });
 
+// Portfolio Card Flip on Hover
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('mouseenter', () => {
+    card.classList.add('flipped');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('flipped');
+  });
+});
+
 
