@@ -1,31 +1,50 @@
 // Ensure DOM is fully loaded before applying effects
 document.addEventListener('DOMContentLoaded', () => {
-  // Parallax Flipping on Scroll
+
+  document.addEventListener('DOMContentLoaded', () => {
   const parallaxElements = document.querySelectorAll('.parallax-flip');
-  const floatingContents = document.querySelectorAll('.floating-content');
 
+  let lastScrollY = window.scrollY;
+
+  // IntersectionObserver to manage in-view state
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const element = entry.target;
+        if (entry.isIntersecting) {
+          element.classList.add('in-view'); // Add class when in view
+        } else {
+          element.classList.remove('in-view'); // Remove class when out of view
+        }
+      });
+    },
+    { threshold: 0.2 } // Trigger when 20% of the element is visible
+  );
+
+  parallaxElements.forEach((element) => observer.observe(element));
+
+  // Scroll event to control flipping
   document.addEventListener('scroll', () => {
-    const scrollOffset = window.scrollY;
-    const windowHeight = window.innerHeight;
+    const currentScrollY = window.scrollY;
 
-    parallaxElements.forEach((element, index) => {
-      // Rotate the background with a flipping effect based on scroll
-      const rotation = scrollOffset * 0.2 - index * 50;
-      element.style.transform = `rotateY(${rotation}deg)`;
+    parallaxElements.forEach((element) => {
+      if (element.classList.contains('in-view')) {
+        const speed = 0.5; // Flip speed multiplier
+        const direction = currentScrollY > lastScrollY ? 1 : -1; // Determine scroll direction
+        let rotation = parseFloat(element.dataset.rotation || 0) + direction * speed;
 
-      // Handle floating content fade-in/out based on scroll position
-      const rect = element.getBoundingClientRect();
-      const floatingContent = element.querySelector('.floating-content');
+        // Apply rotation limits (e.g., max flip 360 degrees)
+        rotation = Math.max(-360, Math.min(360, rotation));
 
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        floatingContent.style.opacity = 1; // Fade in
-        floatingContent.style.transform = 'translate(-50%, -50%) scale(1)';
-      } else {
-        floatingContent.style.opacity = 0; // Fade out
-        floatingContent.style.transform = 'translate(-50%, -50%) scale(0.9)';
+        // Apply 3D transform for flipping
+        element.style.transform = `rotateX(${rotation}deg) translateZ(-50px)`;
+        element.dataset.rotation = rotation; // Save current rotation state
       }
     });
+
+    lastScrollY = currentScrollY; // Update last scroll position
   });
+});
 
   // Responsive Menu for Smaller Screens
   const navMenu = document.querySelector('.nav-menu');
@@ -80,4 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyObserver.observe(img);
   });
 });
+
+// Lazy Loading Portfolio Images
+document.addEventListener('DOMContentLoaded', () => {
+  const lazyImages = document.querySelectorAll('.portfolio-item img');
+
+  const lazyObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.getAttribute('data-src'); // Load the image
+          lazyObserver.unobserve(img); // Stop observing once loaded
+        }
+      });
+    },
+    { threshold: 0.2 } // Load images when 20% visible
+  );
+
+  lazyImages.forEach((img) => lazyObserver.observe(img));
+});
+
 
