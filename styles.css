@@ -20,6 +20,7 @@ body {
   background: linear-gradient(135deg, #2b5876, #4e4376);
   line-height: 1.6;
   overflow-x: hidden;
+  perspective: 1000px; /* Adds 3D depth for flipping effects */
 }
 
 /* Links */
@@ -31,16 +32,6 @@ a {
 
 a:hover {
   color: #fdf2f2;
-}
-
-/* Headers */
-h1, h2, h3 {
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-p {
-  margin-bottom: 1rem;
 }
 
 /* Header */
@@ -147,6 +138,56 @@ header nav ul li a:hover {
   background: linear-gradient(45deg, #feb47b, #ff7e5f);
 }
 
+/* Parallax Backgrounds with Flip */
+.parallax-flip {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  animation: flip 5s infinite ease-in-out;
+  transform-origin: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.parallax-flip.spkr_close_up {
+  background-image: url('spkr_close_up.jpg');
+}
+
+.parallax-flip.speakerAImade {
+  background-image: url('speakerAImade.jpg');
+}
+
+/* Floating Content */
+.floating-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.parallax-flip:hover .floating-content {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Flip Animation */
+@keyframes flip {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+}
+
 /* Services Section */
 .services {
   padding: 4rem 2rem;
@@ -181,6 +222,50 @@ header nav ul li a:hover {
   color: rgba(255, 255, 255, 0.8);
 }
 
+/* Portfolio Section */
+.portfolio-section {
+  text-align: center;
+  padding: 2em 0;
+  background: #f3f4f6;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1em;
+  justify-items: center;
+}
+
+.portfolio-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  margin: 0.5em 0;
+  color: #333;
+  padding: 0 1em;
+}
 
 /* Contact Section */
 .contact {
@@ -235,101 +320,6 @@ footer .social-links a:hover {
   color: var(--accent-color);
 }
 
-/* Portfolio Section */
-.portfolio-section {
-    text-align: center;
-    padding: 2em 0;
-    background: #f3f4f6;
-}
-
-.portfolio-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1em;
-    color: #333;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1em;
-    justify-items: center;
-}
-
-.card {
-    perspective: 1000px;
-    width: 300px;
-    height: 400px;
-}
-
-.card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.card-front {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.card-front img {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-}
-
-.card-front h3 {
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    color: #333;
-}
-
-.card-back {
-    background: #333;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transform: rotateY(180deg);
-    padding: 1rem;
-}
-
-/* Parallax Background */
-.parallax {
-    height: 400px; /* Height of the parallax section */
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-.parallax.spkr_close_up {
-    background-image: url('spkr_close_up.jpg'); /* Replace with your image path */
-}
-
-.parallax.speakerAImade {
-    background-image: url('speakerAImade.jpg'); /* Replace with your image path */
-}
 
 
 
