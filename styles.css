@@ -138,18 +138,21 @@ header nav ul li a:hover {
   background: linear-gradient(45deg, #feb47b, #ff7e5f);
 }
 
-/* Parallax Backgrounds with Flip */
+/* Parallax Flipping */
 .parallax-flip {
   position: relative;
   height: 300px;
   background-size: cover;
   background-position: center;
-  animation: flip 5s infinite ease-in-out;
-  transform-origin: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transform-origin: center; /* Set the origin for flipping */
+  transition: transform 0.1s linear, opacity 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Base shadow for depth */
   overflow: hidden;
+  perspective: 1000px; /* Add perspective for realistic depth */
+  opacity: 0; /* Hidden by default for entry/exit effect */
 }
 
+/* Specific Backgrounds */
 .parallax-flip.spkr_close_up {
   background-image: url('spkr_close_up.jpg');
 }
@@ -158,34 +161,31 @@ header nav ul li a:hover {
   background-image: url('speakerAImade.jpg');
 }
 
-/* Floating Content */
-.floating-content {
+/* Smooth Entry/Exit Effects */
+.parallax-flip.in-view {
+  opacity: 1; /* Fade in when in view */
+  transform: rotateX(0deg) translateZ(0); /* Reset rotation on entry */
+}
+
+.parallax-flip:not(.in-view) {
+  opacity: 0; /* Fade out when out of view */
+  transform: translateZ(-50px) rotateX(-10deg); /* Subtle tilt effect when hidden */
+}
+
+/* Depth Enhancements */
+.parallax-flip::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.9);
-  text-align: center;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Light overlay for depth */
+  z-index: 1;
 }
 
-.parallax-flip:hover .floating-content {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* Flip Animation */
-@keyframes flip {
-  0%, 100% {
-    transform: rotateY(0deg);
-  }
-  50% {
-    transform: rotateY(180deg);
-  }
+body {
+  perspective: 1500px; /* Higher perspective for more 3D depth */
 }
 
 /* Services Section */
