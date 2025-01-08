@@ -182,34 +182,50 @@ header nav ul li a:hover {
 }
 
 /* Portfolio Section */
-.portfolio {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
+.portfolio-section {
+    text-align: center;
+    padding: 2em 0;
+    background: #f3f4f6;
 }
 
-.portfolio h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--text-color);
+.portfolio-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    color: #333;
 }
 
-.portfolio-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    justify-items: center;
 }
 
-.portfolio-gallery img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.portfolio-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-.portfolio-gallery img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+.portfolio-item:hover {
+    transform: translateY(-10px);
 }
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-item h3 {
+    font-size: 1.5rem;
+    margin: 0.5em 0;
+    color: #333;
+    padding: 0 1em;
+}
+
 
 /* Contact Section */
 .contact {
