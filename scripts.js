@@ -131,4 +131,11 @@ document.querySelectorAll('.card').forEach((card) => {
   });
 });
 
+// Add click-to-flip functionality for touch devices
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('click', () => {
+    card.querySelector('.card-inner').classList.toggle('flipped');
+  });
+});
+
 
