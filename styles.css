@@ -446,3 +446,88 @@ footer .social-links a {
 footer .social-links a:hover {
   color: (var(--text-color), 10%);
 }
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  display: grid;
+  place-content: center;
+  background: #333;
+  padding: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.parallax {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000; // Fallback background color
+  perspective: 1px; // Creates the depth illusion
+
+  .layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &.layer-1 {
+      background-image: url('logo.jpg');
+      transform: translateZ(-3px) scale(4);
+    }
+
+    &.layer-2 {
+      background-image: url('speakerAImade.jpg');
+      transform: translateZ(-2px) scale(3);
+    }
+
+    &.layer-3 {
+      background-image: url('realistic.jpg');
+      transform: translateZ(-1px) scale(2);
+    }
+
+    &.foreground {
+      background-image: url('foreground.jpg');
+      z-index: 10;
+    }
+  }
+
+  .glassmorphism {
+    position: relative;
+    z-index: 20; // Ensure it appears above the layers
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    color: #fff;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .button-gradient {
+      background: linear-gradient(45deg, #f093fb, #f5576c);
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 30px;
+    }
+  }
+}
+
