@@ -20,3 +20,9 @@ const swiper = new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 10,
 });
+
+document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
