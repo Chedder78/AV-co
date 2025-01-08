@@ -1,50 +1,58 @@
 // Ensure DOM is fully loaded before applying effects
 document.addEventListener('DOMContentLoaded', () => {
-
-  document.addEventListener('DOMContentLoaded', () => {
-  const parallaxElements = document.querySelectorAll('.parallax-flip');
-
+  const parallaxElements = document.querySelectorAll('.parallax');
+  const portfolioImages = document.querySelectorAll('.portfolio-item img');
+  const cards = document.querySelectorAll('.card');
   let lastScrollY = window.scrollY;
 
-  // IntersectionObserver to manage in-view state
-  const observer = new IntersectionObserver(
+  // Handle parallax scrolling with different speeds
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+
+    parallaxElements.forEach((element, index) => {
+      const speed = (index + 1) * 0.3; // Adjust speed multiplier for each layer
+      const offset = scrollPosition * speed;
+      element.style.transform = `translateY(${offset}px)`;
+    });
+
+    lastScrollY = scrollPosition;
+  });
+
+  // Lazy Loading for Portfolio Images
+  const lazyObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        const element = entry.target;
         if (entry.isIntersecting) {
-          element.classList.add('in-view'); // Add class when in view
-        } else {
-          element.classList.remove('in-view'); // Remove class when out of view
+          const img = entry.target;
+          img.src = img.getAttribute('data-src'); // Load the image
+          lazyObserver.unobserve(img); // Stop observing once loaded
         }
       });
     },
-    { threshold: 0.2 } // Trigger when 20% of the element is visible
+    { threshold: 0.2 }
   );
 
-  parallaxElements.forEach((element) => observer.observe(element));
+  portfolioImages.forEach((img) => {
+    img.setAttribute('data-src', img.src); // Set lazy-loading attribute
+    img.src = ''; // Clear initial src
+    lazyObserver.observe(img);
+  });
 
-  // Scroll event to control flipping
-  document.addEventListener('scroll', () => {
-    const currentScrollY = window.scrollY;
-
-    parallaxElements.forEach((element) => {
-      if (element.classList.contains('in-view')) {
-        const speed = 0.5; // Flip speed multiplier
-        const direction = currentScrollY > lastScrollY ? 1 : -1; // Determine scroll direction
-        let rotation = parseFloat(element.dataset.rotation || 0) + direction * speed;
-
-        // Apply rotation limits (e.g., max flip 360 degrees)
-        rotation = Math.max(-360, Math.min(360, rotation));
-
-        // Apply 3D transform for flipping
-        element.style.transform = `rotateX(${rotation}deg) translateZ(-50px)`;
-        element.dataset.rotation = rotation; // Save current rotation state
-      }
+  // Handle portfolio card flip on hover
+  cards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('flipped');
     });
 
-    lastScrollY = currentScrollY; // Update last scroll position
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('flipped');
+    });
+
+    // Add click-to-flip functionality for touch devices
+    card.addEventListener('click', () => {
+      card.querySelector('.card-inner').classList.toggle('flipped');
+    });
   });
-});
 
   // Responsive Menu for Smaller Screens
   const navMenu = document.querySelector('.nav-menu');
@@ -77,65 +85,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   resizeObserver.observe(document.body);
-
-  // Lazy Loading for Portfolio Images
-  const portfolioImages = document.querySelectorAll('.portfolio-item img');
-  const lazyObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.getAttribute('data-src'); // Replace with actual image URL
-          lazyObserver.unobserve(img); // Stop observing once loaded
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  portfolioImages.forEach((img) => {
-    img.setAttribute('data-src', img.src); // Set lazy-loading attribute
-    img.src = ''; // Clear initial src
-    lazyObserver.observe(img);
-  });
 });
-
-// Lazy Loading Portfolio Images
-document.addEventListener('DOMContentLoaded', () => {
-  const lazyImages = document.querySelectorAll('.portfolio-item img');
-
-  const lazyObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.getAttribute('data-src'); // Load the image
-          lazyObserver.unobserve(img); // Stop observing once loaded
-        }
-      });
-    },
-    { threshold: 0.2 } // Load images when 20% visible
-  );
-
-  lazyImages.forEach((img) => lazyObserver.observe(img));
-});
-
-// Portfolio Card Flip on Hover
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('mouseenter', () => {
-    card.classList.add('flipped');
-  });
-
-  card.addEventListener('mouseleave', () => {
-    card.classList.remove('flipped');
-  });
-});
-
-// Add click-to-flip functionality for touch devices
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('click', () => {
-    card.querySelector('.card-inner').classList.toggle('flipped');
-  });
-});
-
-
