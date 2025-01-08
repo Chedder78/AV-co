@@ -86,3 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   resizeObserver.observe(document.body);
 });
+
+document.querySelectorAll('.card').forEach((card) => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});
+
+
