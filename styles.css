@@ -15,13 +15,14 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  
+  font-family: 'Montserrat', sans-serif;
   color: var(--text-color);
+  background: linear-gradient(135deg, #2b5876, #4e4376);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
+/* Links */
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -32,6 +33,7 @@ a:hover {
   color: #fdf2f2;
 }
 
+/* Headers */
 h1, h2, h3 {
   margin-bottom: 1rem;
   font-weight: bold;
@@ -44,34 +46,28 @@ p {
 /* Header */
 header {
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
-  height: 170px;
- 
-  color: var(--text-color);
+  height: 100px;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  backdrop-filter: blur(15px);
   z-index: 1000;
-  backdrop-filter: blur(10px);
 }
 
 header .logo h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: var(--text-color);
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-header .logo p {
-  font-size: 0.9rem;
-  margin-top: -50px;
-  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 header nav ul {
   display: flex;
-  gap: 1px;
+  gap: 20px;
 }
 
 header nav ul li {
@@ -90,84 +86,16 @@ header nav ul li a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Parallax Background */
-.parallax {
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    padding: 5rem 0;
-    color: white;
-    text-align: center;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    width: auto;
-    height: 500px;
-    opacity: 0.5;
-    z-index: 1
-    animation: scrollBackground 15s linear infinite;
-}
-
-@keyframes scrollBackground {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-20%);
-  }
-}
-
-/* Glassmorphism Header Styles */
-// Glass Header
-.glass-header {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  height: 7px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 200px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-  border-radius: 15px;
-  backdrop-filter: blur(10px); /* Frosted glass effect */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Increased shadow for depth */
-  z-index: 1;
-}
-
-// Logo
-.glass-header .logo h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff; /* White text for visibility */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); /* Stronger shadow for readability */
-}
-
-// Navigation Links
-.glass-header nav .nav-menu li a {
-  color: #ffffff; /* White text for links */
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 20px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.glass-header nav .nav-menu li a:hover {
-  color: #ff7e5f; /* Soft accent color for hover */
-}
-
-// Hero Section
+/* Hero Section */
 .hero {
-  height: 125vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-image: url('realistic.jpg'); /* Your image path */
+  background-image: url('realistic.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Parallax effect */
+  background-attachment: fixed;
   position: relative;
 }
 
@@ -178,356 +106,230 @@ header nav ul li a:hover {
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(15px);
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
-  padding: 40px 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Improved contrast for readability */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-content .btn {
   padding: 10px 20px;
-  background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Consistent with design */
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
   color: #ffffff;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .hero-content .btn:hover {
-  background: linear-gradient(45deg, lighten(#ff7e5f, 10%), lighten(#feb47b, 10%));
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #feb47b, #ff7e5f);
 }
 
-
+/* Services Section */
 .services {
   padding: 4rem 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  background: linear-gradient(135deg, rgba(43, 88, 118, 0.8), rgba(78, 67, 118, 0.8));
 }
 
 .service-item {
-  padding: 2rem;
-
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow for more depth */
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
 }
 
 .service-item h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--color-wood-highlight); /* Highlight with wood tone */
+  color: var(--text-color);
 }
 
 .service-item p {
   font-size: 1rem;
-  color: var(--color-text); /* Ensures readability */
+  color: rgba(255, 255, 255, 0.8);
 }
+
 
 /* Contact Section */
 .contact {
   padding: 4rem 2rem;
-
+  background: linear-gradient(135deg, rgba(255, 154, 158, 0.5), rgba(255, 230, 204, 0.5));
   text-align: center;
-  color: var(--color-text);
-  backdrop-filter: blur(10px);
 }
 
 .contact form {
-  display: grid;
-  gap: 1rem;
   max-width: 500px;
   margin: 0 auto;
+  display: grid;
+  gap: 1rem;
 }
 
 .contact input, .contact textarea, .contact button {
   width: 100%;
   padding: 10px;
-  border: none;
   border-radius: 10px;
   font-size: 1rem;
 }
 
-.contact input, .contact textarea {
- 
-  color: var(--color-text);
-}
-
-.contact input::placeholder, .contact textarea::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
 .contact button {
-  background: var(--color-accent);
-  color: var(--color-dark-background); /* Ensure button text is visible */
+  background: var(--accent-color);
+  color: #ffffff;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .contact button:hover {
-  
-  transform: scale(1.05); /* Slight hover scaling effect */
-}
-
-
-     /* General Body */
-.custom-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #f5f5f5; /* Text color for better readability */
-}
-
-/* Portfolio Section */
-.portfolio {
-    padding: 4rem 2rem;
-    text-align: center;
-   
-    backdrop-filter: blur(10px);
-}
-
-.portfolio h2 {
-    font-size: 2rem;
-    color: #d3d3d3; /* Metallic look for section headers */
-}
-
-.portfolio-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.portfolio-gallery img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-}
-
-.portfolio-gallery img:hover {
-    transform: scale(1.05);
-}
-
-.portfolio-gallery figcaption {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: center;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-   
-}
-
-.modal-content {
-    position: relative;
-    margin: 5% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 800px;
-   
-    border-radius: 10px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    color: white;
-    font-size: 35px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Swiper Container */
-.swiper {
-    width: 100%;
-    height: 400px;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.swiper-button {
-    --position: 17%;
-   
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
-}
-
-.swiper-button:hover {
-    background-color: #4A261F;
-}
-
-.swiper-button-next {
-    right: var(--position);
-}
-
-.swiper-button-prev {
-    left: var(--position);
-}
-
-.swiper-button::after {
-    font-size: 1.5rem;
-    color: #fff;
+  transform: scale(1.05);
+  background: lighten(var(--accent-color), 10%);
 }
 
 /* Footer */
 footer {
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.8);
   text-align: center;
-}
-
-footer .social-links {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--text-color);
 }
 
 footer .social-links a {
-  color: var(--text-color);
+  margin: 0 10px;
   font-size: 1.2rem;
+  color: var(--text-color);
   transition: color 0.3s ease;
 }
 
 footer .social-links a:hover {
-  color: (var(--text-color), 10%);
+  color: var(--accent-color);
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-body {
-  display: grid;
-  place-content: center;
-  background: #333;
-  padding: 2em;
-  font-family: 'Montserrat', sans-serif;
+/* Portfolio Section */
+.portfolio-section {
+    text-align: center;
+    padding: 2em 0;
+    background: #f3f4f6;
 }
 
-.parallax {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  background: #000; // Fallback background color
-  perspective: 1px; // Creates the depth illusion
+.portfolio-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1em;
+    color: #333;
+}
 
-  .layer {
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+    justify-items: center;
+}
+
+.card {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-front {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-front img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-front h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.card-back {
+    background: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: rotateY(180deg);
+    padding: 1rem;
+}
+
+/* Parallax Background */
+.parallax {
+    height: 400px; /* Height of the parallax section */
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
-
-    &.layer-1 {
-      background-image: url('logo.jpg');
-      transform: translateZ(-3px) scale(4);
-    }
-
-    &.layer-2 {
-      background-image: url('speakerAImade.jpg');
-      transform: translateZ(-2px) scale(3);
-    }
-
-    &.layer-3 {
-      background-image: url('realistic.jpg');
-      transform: translateZ(-1px) scale(2);
-    }
-
-    &.foreground {
-      background-image: url('foreground.jpg');
-      z-index: 10;
-    }
-  }
-
-  .glassmorphism {
-    position: relative;
-    z-index: 20; // Ensure it appears above the layers
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    color: #fff;
-    text-align: center;
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .button-gradient {
-      background: linear-gradient(45deg, #f093fb, #f5576c);
-      border: none;
-      color: white;
-      padding: 15px 30px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 30px;
-    }
-  }
 }
+
+.parallax.spkr_close_up {
+    background-image: url('spkr_close_up.jpg'); /* Replace with your image path */
+}
+
+.parallax.speakerAImade {
+    background-image: url('speakerAImade.jpg'); /* Replace with your image path */
+}
+
+
 
